@@ -1,0 +1,17 @@
+{% extends 'blog/base.htm' %}
+{% block content %} 
+
+    {% if post.Estado %}
+        <div>
+                {% if post.Nombre != "Fotografia" %} 
+                {{ post.label_tag }}{{ post }} 
+                {% else %}
+        <img src="{{ post.instance.Fotografia.url }}" alt="">
+         {% endif %}
+       <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.Nombre }}</a></h1>
+            <p>{{ post.Descripcion|linebreaksbr }}</p>
+           <p>Raza: {{ post.RazaPredominante }}</p>
+        </div>
+    {% endif %}
+    <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">Editar Perros</a>
+    {% endblock %}

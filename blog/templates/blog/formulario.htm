@@ -1,0 +1,74 @@
+{% extends 'blog/base.htm' %}
+{% block content %} 
+
+        <h1> Formulario de Registro</h1>
+
+        <div class="formulario">
+            <form class="nombre1">
+                <h2 class="titulo">Crea una cuenta</h2>
+            <div id="contenido">
+                <label for="nombre">Nombre Completo: </label>
+                <input required type="text" id="nombre" required="true" maxlength="200">
+                <br>          
+                <br>
+                <label>Fecha de Nacimiento: </label>
+                <input type="date" id="nacimiento" max="2000-12-31" required="true">
+                <br>
+                <br>
+                <label for="correo">Correo Electronico: </label>
+                <input type="email" required="true" id="correo">
+                <br>
+                <br>
+                <label for="run">RUN: </label>
+                
+                <input type="number" required="true" max="99999999" min="1000000"id="run">
+                
+                <label>Codigo Verificador: </label>
+                <select>
+                    <option selected>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>K</option>
+                </select>
+
+                <br>
+                <br>
+
+                <label>Region:</label>
+                <select id="regiones"></select>
+                <br>
+                <br>
+                <label>Comuna: </label>
+                <select id="comunas"></select>
+                <br>
+                <br>
+                <label>Tipo de vivienda: </label>
+                <select required="true" name="vivienda" id="vivienda" class="vivienda" onsubmit="validar_vivienda()">
+                    <option selected value="0">Seleccione su tipo de vivienda</option>
+                    <option>Casa con patio grande</option>
+                    <option>Casa con patio pequeño</option>
+                    <option>Casa sin patio</option>
+                    <option>Departamento</option>
+                </select>
+                <br>
+                <br>
+                <label for="telefono">Telefono: </label>
+                <input required type="number" id="telefono"  class="imput-100" required>
+                <br>
+                <br>            
+                <div class="boton">
+                <input type="submit" value="Registrar" class="btn-enviar">
+
+                <p class="form__link"> ¿Ya tienes una cuenta? <a href="#"> Ingresa aqui</a></p>
+                </div>
+            </div>
+            </form> 
+        </div>
+        {% endblock %}

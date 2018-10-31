@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+    <link rel="stylesheet" href="{% static 'css/post_new.css' %}">
+    <link rel="stylesheet" href="{% static 'Fuentes/style.css' %}">
+    <script src="main.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="javascript" src="{% static 'validCampoFranz.js' %}"></script>
+    <script>$(function(){
+                $('#postular').click(function(){
+                   $(this).next('#postulante-content').slideToggle();
+                    $(this).ToggleClass('active');
+                });
+            });</script> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div class="contenido-cabecera">
+                <div class="cabecera-logo">
+                    <img src="{% static 'img/logo.png' %}" alt="logo">
+                </div>
+                <div class="cabecera-lista">
+                    <ul class="lista">
+                        <li><a href="http://localhost:8000/">Inicio</a> </li>
+                        <li><a href="#">Contactenos</a> </li>
+                        <li><a href="{% url 'posteos'  %}">¿Quieres una Mascota?</a></li>
+                        <li><a href="{% url 'post_new' %}">Agregar Mascota</a> </li>
+                        <li><a href="{% url 'formulario' %}">Registrate</a></li>
+                    </ul>
+        
+                </div>
+        
+                
+            </div>
+            
+            </div>
+        </div>
+    </div>
+    {% block content %}
+            {% endblock %}
+</body>
+
+</html>

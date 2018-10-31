@@ -1,0 +1,18 @@
+{% extends 'blog/base.htm' %}
+{% block content %} 
+{% load staticfiles %}
+<h1>Perros disponibles para Adopcion!</h1>
+    {% for post in posts %}
+        <div class="content-lista">
+                {% if post.Nombre != "Fotografia" %} 
+                {{ post.label_tag }}{{ post }} 
+                {% else %}
+        <img src="{{ post.instance.Fotografia.url }}" alt=""> 
+        {% endif %}
+       <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.Nombre }}</a></h1>
+            <p>{{ post.Descripcion|linebreaksbr }}</p>
+           <p> Raza: {{ post.RazaPredominante }}</p>
+           <hr>
+        </div>
+        {% endfor %}
+{% endblock %}
